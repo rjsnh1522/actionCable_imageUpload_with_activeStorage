@@ -1,0 +1,30 @@
+<% unless current_user.present? %>
+<div class="col-md-8 col-md-offset-2">
+	
+<p class="text-center font28">
+	Assignment for Health graph
+</p>
+
+<p class="text-center font22">
+		Please register and continue
+</p>
+
+</div>
+
+<% else %>
+	<div class="wrapper selector">
+			<div class="addImage clearfix">
+				<div class="pull-left">
+					<p>Total Image In system: <span id="imageCounter"><%= @images.count %>
+					</span></p>
+				</div>
+				<%= link_to "Add new Image",new_images_path,class:"btn btn-success pull-right" %>
+			</div>
+		<div class="imagesWrapper" data-user="all">
+			<%= render partial: "images/image" %>
+		</div>
+		
+	</div>
+
+
+<% end %>

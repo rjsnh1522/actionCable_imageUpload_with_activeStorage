@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Health Graph</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/3/paper/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= custom_bootstrap_flash %>
+  </head>
+
+  <body>
+    <%= render partial:"layouts/header" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+
+    <%if notice.present? %>
+    <script type="text/javascript">
+      <%#= notice %>
+      toastr.success("","<%= notice%>");
+       </script>
+      <% end %>
+      <%if alert.present?%>
+      <script type="text/javascript"> 
+        toastr.success("","<%= alert %>");
+      </script>
+
+    <% end %>
+
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<div class="wrapper selector">
+			<div class="addImage clearfix">
+				<%= link_to "Add new Image",new_images_path,class:"btn btn-success pull-right" %>
+			</div>
+		<div class="imagesWrapper" data-user="<%= params[:user_id]%>">
+			<%= render partial: "images/image" %>
+		</div>
+</div>

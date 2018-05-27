@@ -1,0 +1,17 @@
+<% if @images.present? %>
+
+			
+	<% @images.each do |image| %>
+ 			 
+ 			 	
+ 			 <div class="singleImageWrap">
+ 			 <%=image_tag image.try(:photo) ,class:"img-rounded image-resize"%>
+ 			 <p class="imgPara">Image By: <%= image.user.email %></p>
+ 			 <p class="imgPara">On: <%= image.created_at.strftime("%B %e, %Y at %I:%M %p") %></p>
+ 			 <p class="imgPara"><%= link_to "view all by this user",images_path(user_id:image.user.id)%></p>
+ 			 </div>
+	<% end%>
+			
+
+
+<% end %>

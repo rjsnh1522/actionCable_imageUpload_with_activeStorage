@@ -1,0 +1,33 @@
+<div class="col-md-8 col-md-offset-2">
+  
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),html:{class: "form-horizontal","data-parsley-validate" => true}) do |f| %>
+ <div class="form-group">
+    <%= f.label :email,class:"col-lg-2 control-label" %><br />
+    <div class="col-lg-10">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control","data-parsley-required"=>true,"data-parsley-type"=>"email"  %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :password,class:"col-lg-2 control-label"  %>
+    <div class="col-lg-10">
+     <%= f.password_field :password, autocomplete: "off",class:"form-control","data-parsley-required"=>true,"data-parsley-minlength"=>"6" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-10 col-lg-offset-2">
+    <%= f.submit "Log in",class:"btn btn-primary"  %>
+  </div>
+  </div>
+
+<% end %>
+  <div class="center-block center-text col-lg-10 col-lg-offset-2">
+      <p><%=link_to "Don't have an account? Sign up", new_user_registration_path%></p>
+  </div>
+
+<%#= render "users/shared/links" %>
+</div>
