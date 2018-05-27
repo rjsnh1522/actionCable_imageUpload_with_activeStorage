@@ -7,7 +7,7 @@ Pawan Chaurasia
 
 Installation process
 --------------------
-
+### Action Cable and Active storage use photo sharing app
 
 1. Go inside project diector health_graph
 2. run bundle install
