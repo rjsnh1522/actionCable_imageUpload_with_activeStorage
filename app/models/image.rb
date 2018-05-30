@@ -3,6 +3,7 @@ class Image < ApplicationRecord
 	after_create_commit { ImageBroadCastJob.perform_later(self) }
 	has_one_attached :photo
 	validate :main_picture_format
+	validates :user_id,presence: true
 	private
 
 	def main_picture_format
